@@ -10,7 +10,7 @@ const greetings = (username) => {
 };
 
 const welcome = () => {
-  console.log('Welcome to the Brain Games!');
+  console.log('\x1b[31m', 'Welcome to the Brain Games!', '\x1b[0m');
 };
 
 export { greetings, welcome, getName };
