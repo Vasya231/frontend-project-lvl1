@@ -32,4 +32,4 @@ const play = (user) => {
   console.log(`Congratulations, ${user}!`);
 };
 
-export { play, displayRules };
+export default play;

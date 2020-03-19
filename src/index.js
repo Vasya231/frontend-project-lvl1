@@ -1,16 +1,15 @@
-import readlineSync from 'readline-sync';
+import init from './init.js';
+import playEven from './even.js';
 
-const getName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  return name || 'anonymous';
+const playGame = (gameNames) => {
+  const username = init();
+  switch (gameNames) {
+    case 'even':
+      playEven(username);
+      break;
+    default:
+      break;
+  }
 };
 
-const greetings = (username) => {
-  console.log(`Hello, ${username}!`);
-};
-
-const welcome = () => {
-  console.log('Welcome to the Brain Games!', '\x1b[0m');
-};
-
-export { greetings, welcome, getName };
+export default playGame;
