@@ -1,3 +1,3 @@
 # frontend-project-lvl1
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/68ff4a20fe294c5ed261/maintainability)](https://codeclimate.com/github/Vasya231/frontend-project-lvl1/maintainability)
