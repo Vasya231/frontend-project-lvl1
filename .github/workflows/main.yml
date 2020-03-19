@@ -22,7 +22,7 @@ jobs:
       run: |
         npm install eslint-config-airbnb-base
         npm install eslint-plugin-import
-        
+
     # Runs a single command using the runners shell
-    - name: Run eslint through make
+    - name: Checking code with linter
       run: make lint

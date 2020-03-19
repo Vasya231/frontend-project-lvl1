@@ -9,8 +9,8 @@ const greet = (name) => {
   }
   console.log(`Hello, ${name}!`);
   return name;
-};               
+};
 
-const greetings = () => greet( askName());
+const greetings = () => greet(askName());
 
 export default greetings;
