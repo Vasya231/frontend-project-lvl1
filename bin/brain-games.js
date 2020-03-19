@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import greetings from '../src/index.js';
+import * as base from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-greetings();
+base.welcome();
+const user = base.getName();
+base.greetings(user);
