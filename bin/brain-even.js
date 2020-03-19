@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import * as base from '../src/index.js';
-import * as even from '../src/brain-even-src.js';
+import play from '../src/main.js';
 
-base.welcome();
-const user = base.getName();
-base.greetings(user);
-even.play(user);
+play('even');
