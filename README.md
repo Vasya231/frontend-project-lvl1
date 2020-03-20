@@ -22,3 +22,7 @@
 Арифметическая прогрессия:
 
 [![asciicast](https://asciinema.org/a/OaoswEZltLAHLCNit9zwGSrwF.svg)](https://asciinema.org/a/OaoswEZltLAHLCNit9zwGSrwF)
+
+Простые числа:
+
+[![asciicast](https://asciinema.org/a/I6DlDLzWpYC9K426BnO5obrke.svg)](https://asciinema.org/a/I6DlDLzWpYC9K426BnO5obrke)
