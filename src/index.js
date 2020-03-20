@@ -1,6 +1,6 @@
 import init from './init.js';
 import playEven from './even.js';
-import cyanyes from './cyanyes.js';
+import cyanyes from './color-even.js';
 
 const playGame = (gameNames) => {
   const username = init();
