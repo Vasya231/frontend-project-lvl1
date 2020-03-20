@@ -18,3 +18,7 @@
 Наибольший общий делитель:
 
 [![asciicast](https://asciinema.org/a/dHgEg6GIEWuxBUHre4TCbGm5e.svg)](https://asciinema.org/a/dHgEg6GIEWuxBUHre4TCbGm5e)
+
+Арифметическая прогрессия:
+
+[![asciicast](https://asciinema.org/a/OaoswEZltLAHLCNit9zwGSrwF.svg)](https://asciinema.org/a/OaoswEZltLAHLCNit9zwGSrwF)
