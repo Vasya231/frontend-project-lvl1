@@ -27,14 +27,16 @@ const resolve = (answer) => {
 };
 
 const playGame = (username, game) => {
-  game.displayRules();
+  game.displayRules(); // Можно было бы возвращать строку и выводить уже тут.
   let successCount = 0;
-  while (successCount < 3) {
+  const succToQuit = 3;
+  const needAStreak = true;
+  while (successCount < succToQuit) {
     const correct = resolve(generateAnswer(game.generateQuestion()));
     if (correct) {
       successCount += 1;
     } else {
-      successCount = 0;
+      if (needAStreak) successCount = 0;
       console.log(`Let's try again, ${username}!`);
     }
   }
