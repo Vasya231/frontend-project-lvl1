@@ -32,13 +32,15 @@ const playGame = (username, game) => {
   const succToQuit = 3;
   const needAStreak = true;
   while (successCount < succToQuit) {
-    const correct = resolve(generateAnswer(game.generateQuestion()));
+    const question = game.generateQuestion();
+    const answer = generateAnswer(question);
+    const correct = resolve(answer);
     if (correct) {
       successCount += 1;
     } else {
+      if (needAStreak) successCount = 0;
       console.log(`Let's try again, ${username}!`);
     }
-    if (needAStreak && !correct) successCount = 0;
   }
   console.log(`Congratulations, ${username}!`);
 };
