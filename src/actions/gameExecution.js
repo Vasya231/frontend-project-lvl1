@@ -26,7 +26,7 @@ const resolve = (answer) => {
   return false;
 };
 
-const playGame = (user, game) => {
+const playGame = (username, game) => {
   game.displayRules();
   let successCount = 0;
   while (successCount < 3) {
@@ -35,10 +35,10 @@ const playGame = (user, game) => {
       successCount += 1;
     } else {
       successCount = 0;
-      console.log(`Let's try again, ${user}!`);
+      console.log(`Let's try again, ${username}!`);
     }
   }
-  console.log(`Congratulations, ${user}!`);
+  console.log(`Congratulations, ${username}!`);
 };
 
 export default playGame;

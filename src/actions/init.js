@@ -15,9 +15,9 @@ const welcome = () => {
 
 const init = () => {
   welcome();
-  const user = getName();
-  greetings(user);
-  return user;
+  const username = getName();
+  greetings(username);
+  return username;
 };
 
 export default init;

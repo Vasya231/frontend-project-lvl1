@@ -11,9 +11,10 @@ const isPrime = (num) => {
 };
 
 const generateQuestion = () => {
-  const num = Math.round(Math.random() * 50) * 2 + 1;
-  const expected = (isPrime(num)) ? 'yes' : 'no';
-  const question = `${num}`;
+  const maxNum = 99;
+  const randomNum = Math.round((Math.random() * (maxNum - 1)) / 2) * 2 + 1;
+  const expected = (isPrime(randomNum)) ? 'yes' : 'no';
+  const question = `${randomNum}`;
   return (field) => {
     switch (field) {
       case 'question': return question;

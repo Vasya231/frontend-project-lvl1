@@ -3,9 +3,10 @@ const displayRules = () => {
 };
 
 const generateQuestion = () => {
-  const num = Math.round(Math.random() * 100);
-  const expected = (num % 2 === 0) ? 'yes' : 'no';
-  const question = `${num}`;
+  const maxNum = 100;
+  const randomNum = Math.round(Math.random() * maxNum);
+  const expected = (randomNum % 2 === 0) ? 'yes' : 'no';
+  const question = `${randomNum}`;
   return (field) => {
     switch (field) {
       case 'question': return question;

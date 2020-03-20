@@ -3,28 +3,30 @@ const displayRules = () => {
 };
 
 const generateQuestion = () => {
-  const num1 = Math.round(Math.random() * 100);
-  const num2 = Math.round(Math.random() * 100);
-  const num3 = Math.round(Math.random() * 100);
+  const maxNum = 100;
+  const numberOfOperations = 3;
+  const randomNum1 = Math.round(Math.random() * maxNum);
+  const randomNum2 = Math.round(Math.random() * maxNum);
+  const operationIndex = Math.round(Math.random() * (numberOfOperations - 1));
   let expected = 0;
   let operation = '';
-  switch (num3 % 3) {
+  switch (operationIndex % 3) {
     case 0:
       operation = '+';
-      expected = num1 + num2;
+      expected = randomNum1 + randomNum2;
       break;
     case 1:
       operation = '-';
-      expected = num1 - num2;
+      expected = randomNum1 - randomNum2;
       break;
     case 2:
       operation = '*';
-      expected = num1 * num2;
+      expected = randomNum1 * randomNum2;
       break;
     default:
       break;
   }
-  const question = `${num1} ${operation} ${num2}`;
+  const question = `${randomNum1} ${operation} ${randomNum2}`;
   return (field) => {
     switch (field) {
       case 'question': return question;
