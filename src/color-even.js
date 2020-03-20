@@ -1,3 +1,5 @@
+import colors from 'colors';
+
 const cyanyes = (user) => {
   const { stdin } = process;
   stdin.setRawMode(true);
@@ -8,9 +10,14 @@ const cyanyes = (user) => {
   let num = 0;
   let expected = '';
   let success = 0;
+  // const cyanColor = '\x1b[36m';
+  // const resetColor = '\x1b[0m';
 
   const displayRules = () => {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    const redYes = colors.red('"yes"');
+    const redNo = colors.red('"no"');
+    const boldIf = colors.bold('if');
+    console.log(`Answer ${redYes} ${boldIf} the number is even, otherwise answer ${redNo}.`);
   };
 
   const askIfEven = () => {
@@ -33,7 +40,10 @@ const cyanyes = (user) => {
       success += 1;
       // console.log(`${success} in a row!`);
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expected}".`);
+      const boldSmile = colors.bold(';(');
+      console.log(`"${colors.red(answer)}" is wrong answer ${boldSmile}. Correct answer was "${colors.red(expected)}".`);
+      const stryAgain = colors.red(`'s try again, ${user}!`);
+      console.log(`Let${stryAgain}`);
       success = 0;
     }
     if (success === 3) {
@@ -59,7 +69,7 @@ const cyanyes = (user) => {
     }
     if (String(key).charCodeAt() === 127) {
       process.stdout.write('\r');
-      for (let i = 0; i < answer.length; i += 1) {
+      for (let i = 0; i < answer.length + 13; i += 1) {
         process.stdout.write(' ');
       }
       answer = answer.slice(0, -1);
@@ -67,11 +77,9 @@ const cyanyes = (user) => {
     process.stdout.write('\r');
     process.stdout.write('Your answer: ');
     if (answer === 'yes') {
-      process.stdout.write('\x1b[36m');
-    }
-    process.stdout.write(answer);
-    if (answer === 'yes') {
-      process.stdout.write('\x1b[0m');
+      process.stdout.write(colors.cyan(answer));
+    } else {
+      process.stdout.write(answer);
     }
   });
 
