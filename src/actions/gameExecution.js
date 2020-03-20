@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getText, getExpectedAnswer } from '../model/question.js';
 
 const areEqual = (actual, expected) => {
   const actualLc = String(actual).toLocaleLowerCase();
@@ -14,8 +15,8 @@ const playGame = (username, game) => {
   let successCount = 0;
   while (successCount < succToQuit) {
     const currentQuestion = game.generateQuestion();
-    const questionText = currentQuestion('question');
-    const expected = currentQuestion('expected');
+    const questionText = getText(currentQuestion);
+    const expected = getExpectedAnswer(currentQuestion);
     console.log(questionText);
     const actual = readlineSync.question('Your answer: ');
     const correct = areEqual(actual, expected);
