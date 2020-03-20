@@ -5,4 +5,12 @@
 ![](https://github.com/Vasya231/frontend-project-lvl1/workflows/CI/badge.svg)
 
 Установка и использование:
+
+
+Чет-нечет:
+
 [![asciicast](https://asciinema.org/a/2si0HDgfJ6OJK2HqwgYD3hVsn.svg)](https://asciinema.org/a/2si0HDgfJ6OJK2HqwgYD3hVsn)
+
+Калькулятор:
+
+[![asciicast](https://asciinema.org/a/gGq9Y9VbduMLVGdFjgfFuT35Y.svg)](https://asciinema.org/a/gGq9Y9VbduMLVGdFjgfFuT35Y)
