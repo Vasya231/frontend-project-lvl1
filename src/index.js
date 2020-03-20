@@ -6,16 +6,6 @@ import * as GCD from './games/gcd.js';
 import * as Progression from './games/progression.js';
 import * as Prime from './games/prime.js';
 
-/*
-Модуль игры должен экспортировать две функции:
-displayRules() - будет выполнена перед игрой, может выводить правила.
-generateQuestion() - должна возвращать пару вопрос и ожидаемый ответ,
-доступ к значениям должен быть такой:
-generateQuestion()('question') должна возвращать вопрос;
-generateQuestion()('expected') должна возвращать ожидаемый ответ.
-При проверке на соответствие, регистр ответа пользователя и ожидаемого ответа не учитываются.
-*/
-
 const start = (gameNames) => {
   const username = init();
   switch (gameNames) {

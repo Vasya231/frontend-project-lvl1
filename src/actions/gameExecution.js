@@ -27,7 +27,7 @@ const resolve = (answer) => {
 };
 
 const playGame = (username, game) => {
-  game.displayRules(); // Можно было бы возвращать строку и выводить уже тут.
+  game.displayRules();
   let successCount = 0;
   const succToQuit = 3;
   const needAStreak = true;
