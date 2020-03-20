@@ -14,3 +14,7 @@
 Калькулятор:
 
 [![asciicast](https://asciinema.org/a/gGq9Y9VbduMLVGdFjgfFuT35Y.svg)](https://asciinema.org/a/gGq9Y9VbduMLVGdFjgfFuT35Y)
+
+Наибольший общий делитель:
+
+[![asciicast](https://asciinema.org/a/dHgEg6GIEWuxBUHre4TCbGm5e.svg)](https://asciinema.org/a/dHgEg6GIEWuxBUHre4TCbGm5e)
