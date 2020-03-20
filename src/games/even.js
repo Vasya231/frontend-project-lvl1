@@ -1,27 +1,22 @@
-import readlineSync from 'readline-sync';
+import generateAnswer from '../model/answer.js';
 
 const displayRules = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
 
-const askIfEven = () => {
+const askQuestion = () => {
   const num = Math.round(Math.random() * 100);
   const expected = (num % 2 === 0) ? 'yes' : 'no';
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (answer.toLowerCase() === expected) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expected}".`);
-  return false;
+  const question = `${num}`;
+  const answer = generateAnswer(question, expected);
+  return answer();
 };
 
 const play = (user) => {
   displayRules();
   let successCount = 0;
   while (successCount < 3) {
-    const correct = askIfEven();
+    const correct = askQuestion();
     if (correct) {
       successCount += 1;
     } else {
