@@ -4,11 +4,15 @@ import * as Even from './games/even.js';
 import * as Calc from './games/calculator.js';
 import * as GCD from './games/gcd.js';
 import * as Progression from './games/progression.js';
+import * as Prime from './games/prime.js';
 
 
 const start = (gameNames) => {
   const username = init();
   switch (gameNames) {
+    case 'prime':
+      play(username, Prime);
+      break;
     case 'progression':
       play(username, Progression);
       break;
