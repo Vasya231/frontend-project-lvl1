@@ -25,8 +25,8 @@ const generateQuestion = () => {
       break;
   }
   const question = `${num1} ${operation} ${num2}`;
-  return (command) => {
-    switch (command) {
+  return (field) => {
+    switch (field) {
       case 'question': return question;
       case 'expected': return expected;
       default: return null;

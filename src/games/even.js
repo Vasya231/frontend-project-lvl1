@@ -6,8 +6,8 @@ const generateQuestion = () => {
   const num = Math.round(Math.random() * 100);
   const expected = (num % 2 === 0) ? 'yes' : 'no';
   const question = `${num}`;
-  return (command) => {
-    switch (command) {
+  return (field) => {
+    switch (field) {
       case 'question': return question;
       case 'expected': return expected;
       default: return null;

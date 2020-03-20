@@ -4,8 +4,8 @@ const generateAnswer = (question) => {
   const expected = question('expected');
   console.log(question('question'));
   const actual = readlineSync.question('Your answer: ');
-  return (command) => {
-    switch (command) {
+  return (field) => {
+    switch (field) {
       case 'actual': return actual;
       case 'expected': return expected;
       default: return null;
