@@ -2,25 +2,35 @@ const displayRules = () => {
   console.log('What is the result of the expression?');
 };
 
+const getRandomOperation = () => {
+  const numberOfOperations = 3;
+  const operationIndex = Math.round(Math.random() * (numberOfOperations - 1));
+  switch (operationIndex % numberOfOperations) {
+    case 0:
+      return '+';
+    case 1:
+      return '-';
+    case 2:
+      return '*';
+    default:
+      return null;
+  }
+};
+
 const generateQuestion = () => {
   const maxNum = 100;
-  const numberOfOperations = 3;
   const randomNum1 = Math.round(Math.random() * maxNum);
   const randomNum2 = Math.round(Math.random() * maxNum);
-  const operationIndex = Math.round(Math.random() * (numberOfOperations - 1));
+  const operation = getRandomOperation();
   let expected = 0;
-  let operation = '';
-  switch (operationIndex % 3) {
-    case 0:
-      operation = '+';
+  switch (operation) {
+    case '+':
       expected = randomNum1 + randomNum2;
       break;
-    case 1:
-      operation = '-';
+    case '-':
       expected = randomNum1 - randomNum2;
       break;
-    case 2:
-      operation = '*';
+    case '*':
       expected = randomNum1 * randomNum2;
       break;
     default:

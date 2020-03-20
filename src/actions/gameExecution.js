@@ -36,9 +36,9 @@ const playGame = (username, game) => {
     if (correct) {
       successCount += 1;
     } else {
-      if (needAStreak) successCount = 0;
       console.log(`Let's try again, ${username}!`);
     }
+    if (needAStreak && !correct) successCount = 0;
   }
   console.log(`Congratulations, ${username}!`);
 };
