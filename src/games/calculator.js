@@ -1,6 +1,4 @@
-const displayRules = () => {
-  console.log('What is the result of the expression?');
-};
+const getRules = () => 'What is the result of the expression?';
 
 const getRandomOperation = () => {
   const numberOfOperations = 3;
@@ -46,4 +44,4 @@ const generateQuestion = () => {
   };
 };
 
-export { displayRules, generateQuestion };
+export { getRules, generateQuestion };

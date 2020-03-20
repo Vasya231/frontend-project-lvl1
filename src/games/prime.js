@@ -1,6 +1,4 @@
-const displayRules = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-};
+const getRules = () => 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num === 1) return false;
@@ -24,4 +22,4 @@ const generateQuestion = () => {
   };
 };
 
-export { displayRules, generateQuestion };
+export { getRules, generateQuestion };

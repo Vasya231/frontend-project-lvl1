@@ -1,6 +1,4 @@
-const displayRules = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-};
+const getRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateQuestion = () => {
   const maxNum = 100;
@@ -16,4 +14,4 @@ const generateQuestion = () => {
   };
 };
 
-export { displayRules, generateQuestion };
+export { getRules, generateQuestion };

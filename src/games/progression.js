@@ -1,6 +1,4 @@
-const displayRules = () => {
-  console.log('What number is missing in the progression?');
-};
+const getRules = () => 'What number is missing in the progression?';
 
 const generateQuestion = () => {
   const progression = [];
@@ -25,4 +23,4 @@ const generateQuestion = () => {
   };
 };
 
-export { displayRules, generateQuestion };
+export { getRules, generateQuestion };
