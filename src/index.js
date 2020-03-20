@@ -1,19 +1,20 @@
 import init from './init.js';
-import playEven from './games/even.js';
-import calc from './games/calculator.js';
+import * as Even from './games/even.js';
+import * as Calc from './games/calculator.js';
+import play from './actions/actions.js';
 
-const playGame = (gameNames) => {
+const start = (gameNames) => {
   const username = init();
   switch (gameNames) {
     case 'even':
-      playEven(username);
+      play(username, Even);
       break;
     case 'calculator':
-      calc(username);
+      play(username, Calc);
       break;
     default:
       break;
   }
 };
 
-export default playGame;
+export default start;

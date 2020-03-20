@@ -1,10 +1,8 @@
-import generateAnswer from '../model/answer.js';
-
 const displayRules = () => {
   console.log('What is the result of the expression?');
 };
 
-const askQuestion = () => {
+const generateQuestion = () => {
   const num1 = Math.round(Math.random() * 100);
   const num2 = Math.round(Math.random() * 100);
   const num3 = Math.round(Math.random() * 100);
@@ -27,23 +25,13 @@ const askQuestion = () => {
       break;
   }
   const question = `${num1} ${operation} ${num2}`;
-  const answer = generateAnswer(question, expected);
-  return answer();
-};
-
-const play = (user) => {
-  displayRules();
-  let successCount = 0;
-  while (successCount < 3) {
-    const correct = askQuestion();
-    if (correct) {
-      successCount += 1;
-    } else {
-      successCount = 0;
-      console.log(`Let's try again, ${user}!`);
+  return (command) => {
+    switch (command) {
+      case 'question': return question;
+      case 'expected': return expected;
+      default: return null;
     }
-  }
-  console.log(`Congratulations, ${user}!`);
+  };
 };
 
-export default play;
+export { displayRules, generateQuestion };
