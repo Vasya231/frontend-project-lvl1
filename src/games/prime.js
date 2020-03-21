@@ -1,6 +1,6 @@
 import { createQuestion } from '../model/question.js';
 
-const getRules = () => 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num === 1) return false;
@@ -18,4 +18,4 @@ const generateQuestion = () => {
   return createQuestion(question, expected);
 };
 
-export { getRules, generateQuestion };
+export { rules, generateQuestion };

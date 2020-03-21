@@ -1,6 +1,6 @@
 import { createQuestion } from '../model/question.js';
 
-const getRules = () => 'What is the result of the expression?';
+const rules = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
   const numberOfOperations = 3;
@@ -40,4 +40,4 @@ const generateQuestion = () => {
   return createQuestion(question, expected);
 };
 
-export { getRules, generateQuestion };
+export { rules, generateQuestion };

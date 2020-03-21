@@ -25,8 +25,8 @@ const playGame = (game) => {
   const username = getUserName();
   greetUser(username);
   if (game === undefined) return;
-  const rules = game.getRules();
-  console.log(rules);
+  const gameRules = game.rules;
+  console.log(gameRules);
   const numberOfQuestions = 3;
   for (let questionsAsked = 1; questionsAsked <= numberOfQuestions; questionsAsked += 1) {
     const currentQuestion = game.generateQuestion();

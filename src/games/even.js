@@ -1,6 +1,6 @@
 import { createQuestion } from '../model/question.js';
 
-const getRules = () => 'Answer "yes" if the number is even, otherwise answer "no".';
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateQuestion = () => {
   const maxNum = 100;
@@ -10,4 +10,4 @@ const generateQuestion = () => {
   return createQuestion(question, expected);
 };
 
-export { getRules, generateQuestion };
+export { rules, generateQuestion };

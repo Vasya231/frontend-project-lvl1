@@ -1,8 +1,8 @@
 import { createQuestion } from '../model/question.js';
 
-const getRules = () => 'Find the greatest common divisor of given numbers.';
+const rules = 'Find the greatest common divisor of given numbers.';
 
-const generateGCD = (num1, num2) => {
+const getGCD = (num1, num2) => {
   let max = Math.max(num1, num2);
   let divisor = Math.min(num1, num2);
   let result = max % divisor;
@@ -19,9 +19,9 @@ const generateQuestion = () => {
   // Надо бы генерацию поумнее сделать, почти всегда ответ 1 или 2.
   const randomNum1 = Math.round(Math.random() * maxNum);
   const randomNum2 = Math.round(Math.random() * maxNum);
-  const expected = generateGCD(randomNum1, randomNum2);
+  const expected = getGCD(randomNum1, randomNum2);
   const question = `${randomNum1} ${randomNum2}`;
   return createQuestion(question, expected);
 };
 
-export { getRules, generateQuestion };
+export { rules, generateQuestion };
