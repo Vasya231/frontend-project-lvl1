@@ -4,17 +4,9 @@ const rules = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
   const numberOfOperations = 3;
+  const operations = ['+', '-', '*'];
   const operationIndex = Math.round(Math.random() * (numberOfOperations - 1));
-  switch (operationIndex % numberOfOperations) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    case 2:
-      return '*';
-    default:
-      return null;
-  }
+  return operations[operationIndex];
 };
 
 const generateQuestion = () => {
