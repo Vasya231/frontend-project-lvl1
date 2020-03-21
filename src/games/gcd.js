@@ -3,15 +3,14 @@ import { createQuestion } from '../model/question.js';
 const rules = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (num1, num2) => {
-  let max = Math.max(num1, num2);
-  let divisor = Math.min(num1, num2);
-  let result = max % divisor;
-  while (result !== 0) {
-    max = divisor;
-    divisor = result;
-    result = max % divisor;
+  const max = Math.max(num1, num2);
+  const min = Math.min(num1, num2);
+  for (let divisor = min; divisor > 0; divisor -= 1) {
+    if ((max % divisor === 0) && (min % divisor === 0)) {
+      return divisor;
+    }
   }
-  return divisor;
+  return null;
 };
 
 const generateQuestion = () => {
