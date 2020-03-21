@@ -1,32 +1,48 @@
-import init from './actions/init.js';
-import play from './actions/gameExecution.js';
-import * as Even from './games/even.js';
-import * as Calc from './games/calculator.js';
-import * as GCD from './games/gcd.js';
-import * as Progression from './games/progression.js';
-import * as Prime from './games/prime.js';
+import readlineSync from 'readline-sync';
+import { getText, getExpectedAnswer } from './model/question.js';
 
-const start = (gameNames) => {
-  const username = init();
-  switch (gameNames) {
-    case 'prime':
-      play(username, Prime);
-      break;
-    case 'progression':
-      play(username, Progression);
-      break;
-    case 'gcd':
-      play(username, GCD);
-      break;
-    case 'even':
-      play(username, Even);
-      break;
-    case 'calculator':
-      play(username, Calc);
-      break;
-    default:
-      break;
-  }
+const areEqualByRules = (actual, expected) => {
+  const actualLc = String(actual).toLocaleLowerCase();
+  const expectedLc = String(expected).toLowerCase();
+  return actualLc === expectedLc;
 };
 
-export default start;
+const getUserName = () => {
+  const name = readlineSync.question('May I have your name? ');
+  return name || 'anonymous';
+};
+
+const greetUser = (username) => {
+  console.log(`Hello, ${username}!`);
+};
+
+const displayWelcome = () => {
+  console.log('Welcome to the Brain Games!');
+};
+
+const playGame = (game) => {
+  displayWelcome();
+  const username = getUserName();
+  greetUser(username);
+  if (game === undefined) return;
+  const rules = game.getRules();
+  console.log(rules);
+  const numberOfQuestions = 3;
+  for (let questionsAsked = 1; questionsAsked <= numberOfQuestions; questionsAsked += 1) {
+    const currentQuestion = game.generateQuestion();
+    const questionText = getText(currentQuestion);
+    const expected = getExpectedAnswer(currentQuestion);
+    console.log(questionText);
+    const actual = readlineSync.question('Your answer: ');
+    const correct = areEqualByRules(actual, expected);
+    if (!correct) {
+      console.log(`"${actual}" is wrong answer ;(. Correct answer was "${expected}".`);
+      console.log(`Let's try again, ${username}!`);
+      return;
+    }
+    console.log('Correct!');
+  }
+  console.log(`Congratulations, ${username}!`);
+};
+
+export default playGame;
