@@ -1,5 +1,3 @@
-import { createQuestion } from '../model/question.js';
-
 const rules = 'What number is missing in the progression?';
 
 const generateQuestion = () => {
@@ -16,7 +14,7 @@ const generateQuestion = () => {
   const expected = progression[missing];
   progression[missing] = '..';
   const question = progression.join(' ');
-  return createQuestion(question, expected);
+  return [question, expected];
 };
 
 export { rules, generateQuestion };

@@ -1,5 +1,3 @@
-import { createQuestion } from '../model/question.js';
-
 const rules = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
@@ -29,7 +27,7 @@ const generateQuestion = () => {
       break;
   }
   const question = `${randomNum1} ${operation} ${randomNum2}`;
-  return createQuestion(question, expected);
+  return [question, expected];
 };
 
 export { rules, generateQuestion };

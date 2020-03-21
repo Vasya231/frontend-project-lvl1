@@ -1,5 +1,3 @@
-import { createQuestion } from '../model/question.js';
-
 const rules = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (num1, num2) => {
@@ -20,7 +18,7 @@ const generateQuestion = () => {
   const randomNum2 = Math.round(Math.random() * maxNum);
   const expected = getGCD(randomNum1, randomNum2);
   const question = `${randomNum1} ${randomNum2}`;
-  return createQuestion(question, expected);
+  return [question, expected];
 };
 
 export { rules, generateQuestion };
