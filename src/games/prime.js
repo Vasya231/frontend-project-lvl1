@@ -1,3 +1,5 @@
+import { createQuestion } from '../model/question.js';
+
 const getRules = () => 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
@@ -13,13 +15,7 @@ const generateQuestion = () => {
   const randomNum = Math.round((Math.random() * (maxNum - 1)) / 2) * 2 + 1;
   const expected = (isPrime(randomNum)) ? 'yes' : 'no';
   const question = `${randomNum}`;
-  return (field) => {
-    switch (field) {
-      case 'question': return question;
-      case 'expected': return expected;
-      default: return null;
-    }
-  };
+  return createQuestion(question, expected);
 };
 
 export { getRules, generateQuestion };

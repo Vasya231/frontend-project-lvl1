@@ -1,3 +1,5 @@
+import { createQuestion } from '../model/question.js';
+
 const getRules = () => 'What number is missing in the progression?';
 
 const generateQuestion = () => {
@@ -14,13 +16,7 @@ const generateQuestion = () => {
   const expected = progression[missing];
   progression[missing] = '..';
   const question = progression.join(' ');
-  return (field) => {
-    switch (field) {
-      case 'question': return question;
-      case 'expected': return expected;
-      default: return null;
-    }
-  };
+  return createQuestion(question, expected);
 };
 
 export { getRules, generateQuestion };
