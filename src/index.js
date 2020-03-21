@@ -6,23 +6,10 @@ const areEqualByRules = (actual, expected) => {
   return actualLc === expectedLc;
 };
 
-const getUserName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  return name || 'anonymous';
-};
-
-const greetUser = (username) => {
-  console.log(`Hello, ${username}!`);
-};
-
-const displayWelcome = () => {
-  console.log('Welcome to the Brain Games!');
-};
-
 const playGame = (game) => {
-  displayWelcome();
-  const username = getUserName();
-  greetUser(username);
+  console.log('Welcome to the Brain Games!');
+  const username = readlineSync.question('May I have your name? ') || 'anonymous';
+  console.log(`Hello, ${username}!`);
   if (game === undefined) return;
   const gameRules = game.rules;
   console.log(gameRules);
