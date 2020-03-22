@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const areEqualByRules = (actual, expected) => {
-  const actualLc = actual.toLowerCase();
-  const expectedLc = String(expected).toLowerCase();
-  return actualLc === expectedLc;
-};
-
 const playGame = (game) => {
   console.log('Welcome to the Brain Games!');
   const username = readlineSync.question('May I have your name? ') || 'anonymous';
@@ -20,7 +14,7 @@ const playGame = (game) => {
     const expected = currentQuestion[1];
     console.log(questionText);
     const actual = readlineSync.question('Your answer: ');
-    const correct = areEqualByRules(actual, expected);
+    const correct = actual.toLowerCase === String(expected);
     if (!correct) {
       console.log(`"${actual}" is wrong answer ;(. Correct answer was "${expected}".`);
       console.log(`Let's try again, ${username}!`);
