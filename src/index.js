@@ -14,7 +14,7 @@ const playGame = (game) => {
     const expected = currentQuestion[1];
     console.log(questionText);
     const actual = readlineSync.question('Your answer: ');
-    const correct = actual.toLowerCase === String(expected);
+    const correct = actual.toLowerCase() === String(expected);
     if (!correct) {
       console.log(`"${actual}" is wrong answer ;(. Correct answer was "${expected}".`);
       console.log(`Let's try again, ${username}!`);
