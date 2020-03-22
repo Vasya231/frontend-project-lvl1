@@ -1,4 +1,4 @@
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (num1, num2) => {
   const max = Math.max(num1, num2);
@@ -21,4 +21,4 @@ const generateQuestion = () => {
   return [question, expected];
 };
 
-export { rules, generateQuestion };
+export { description, generateQuestion };

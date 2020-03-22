@@ -1,10 +1,18 @@
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
-  const numberOfOperations = 3;
   const operations = ['+', '-', '*'];
-  const operationIndex = Math.round(Math.random() * (numberOfOperations - 1));
+  const operationIndex = Math.round(Math.random() * (operations.length - 1));
   return operations[operationIndex];
+};
+
+const apply = (num1, num2, operation) => {
+  switch (operation) {
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default: return NaN;
+  }
 };
 
 const generateQuestion = () => {
@@ -12,22 +20,9 @@ const generateQuestion = () => {
   const randomNum1 = Math.round(Math.random() * maxNum);
   const randomNum2 = Math.round(Math.random() * maxNum);
   const operation = getRandomOperation();
-  let expected = 0;
-  switch (operation) {
-    case '+':
-      expected = randomNum1 + randomNum2;
-      break;
-    case '-':
-      expected = randomNum1 - randomNum2;
-      break;
-    case '*':
-      expected = randomNum1 * randomNum2;
-      break;
-    default:
-      break;
-  }
+  const expected = apply(randomNum1, randomNum2, operation);
   const question = `${randomNum1} ${operation} ${randomNum2}`;
   return [question, expected];
 };
 
-export { rules, generateQuestion };
+export { description, generateQuestion };

@@ -1,4 +1,4 @@
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateQuestion = () => {
   const maxNum = 100;
@@ -8,4 +8,4 @@ const generateQuestion = () => {
   return [question, expected];
 };
 
-export { rules, generateQuestion };
+export { description, generateQuestion };

@@ -1,4 +1,4 @@
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const generateQuestion = () => {
   const progression = [];
@@ -17,4 +17,4 @@ const generateQuestion = () => {
   return [question, expected];
 };
 
-export { rules, generateQuestion };
+export { description, generateQuestion };
