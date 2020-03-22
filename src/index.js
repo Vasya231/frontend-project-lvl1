@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const areEqualByRules = (actual, expected) => {
-  const actualLc = String(actual).toLocaleLowerCase();
+  const actualLc = actual.toLowerCase();
   const expectedLc = String(expected).toLowerCase();
   return actualLc === expectedLc;
 };
