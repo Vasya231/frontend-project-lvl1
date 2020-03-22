@@ -1,3 +1,5 @@
+import randomInt from '../randomInt.js';
+
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
@@ -10,7 +12,7 @@ const isPrime = (num) => {
 
 const generateQuestion = () => {
   const maxNum = 99;
-  const randomNum = Math.round((Math.random() * (maxNum - 1)) / 2) * 2 + 1;
+  const randomNum = randomInt(Math.floor((maxNum - 1) / 2)) * 2 + 1;
   const expected = (isPrime(randomNum)) ? 'yes' : 'no';
   const question = `${randomNum}`;
   return [question, expected];
