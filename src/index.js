@@ -4,7 +4,6 @@ const playGame = (game) => {
   console.log('Welcome to the Brain Games!');
   const username = readlineSync.question('May I have your name? ') || 'anonymous';
   console.log(`Hello, ${username}!`);
-  if (game === null) return;
   const gameRules = game.description;
   console.log(gameRules);
   const numberOfQuestions = 3;
