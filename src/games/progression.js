@@ -15,8 +15,8 @@ const generateQuestion = () => {
   }
   const expected = progression[missing];
   progression[missing] = '..';
-  const question = progression.join(' ');
-  return [question, expected];
+  const text = progression.join(' ');
+  return { text, expected };
 };
 
 export { description, generateQuestion };

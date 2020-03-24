@@ -8,7 +8,7 @@ const playGame = (game) => {
   console.log(gameRules);
   const numberOfQuestions = 3;
   for (let questionsAsked = 1; questionsAsked <= numberOfQuestions; questionsAsked += 1) {
-    const [questionText, expected] = game.generateQuestion();
+    const { text: questionText, expected } = game.generateQuestion();
     console.log(questionText);
     const actual = readlineSync.question('Your answer: ');
     const correct = actual.toLowerCase() === String(expected);

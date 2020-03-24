@@ -6,8 +6,8 @@ const generateQuestion = () => {
   const maxNum = 100;
   const randomNum = randomInt(maxNum);
   const expected = (randomNum % 2 === 0) ? 'yes' : 'no';
-  const question = `${randomNum}`;
-  return [question, expected];
+  const text = `${randomNum}`;
+  return { text, expected };
 };
 
 export { description, generateQuestion };

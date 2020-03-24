@@ -14,8 +14,8 @@ const generateQuestion = () => {
   const maxNum = 99;
   const randomNum = randomInt(Math.floor((maxNum - 1) / 2)) * 2 + 1;
   const expected = (isPrime(randomNum)) ? 'yes' : 'no';
-  const question = `${randomNum}`;
-  return [question, expected];
+  const text = `${randomNum}`;
+  return { text, expected };
 };
 
 export { description, generateQuestion };
