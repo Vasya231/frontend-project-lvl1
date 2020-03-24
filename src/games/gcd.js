@@ -5,12 +5,8 @@ const description = 'Find the greatest common divisor of given numbers.';
 const getGCD = (num1, num2) => {
   const max = Math.max(num1, num2);
   const min = Math.min(num1, num2);
-  for (let divisor = min; divisor > 0; divisor -= 1) {
-    if ((max % divisor === 0) && (min % divisor === 0)) {
-      return divisor;
-    }
-  }
-  return null;
+  const remainder = max % min;
+  return (remainder === 0) ? min : getGCD(min, remainder);
 };
 
 const generateQuestion = () => {
