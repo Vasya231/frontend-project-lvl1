@@ -15,8 +15,8 @@ const generateQuestion = () => {
   const randomNum1 = randomInt(maxNum);
   const randomNum2 = randomInt(maxNum);
   const expected = getGCD(randomNum1, randomNum2);
-  const text = `${randomNum1} ${randomNum2}`;
-  return { text, expected };
+  const questionText = `${randomNum1} ${randomNum2}`;
+  return { questionText, expected };
 };
 
 export { description, generateQuestion };

@@ -23,8 +23,8 @@ const generateQuestion = () => {
   const randomNum2 = randomInt(maxNum);
   const operation = getRandomOperation();
   const expected = apply(randomNum1, randomNum2, operation);
-  const text = `${randomNum1} ${operation} ${randomNum2}`;
-  return { text, expected };
+  const questionText = `${randomNum1} ${operation} ${randomNum2}`;
+  return { questionText, expected };
 };
 
 export { description, generateQuestion };
