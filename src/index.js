@@ -4,11 +4,11 @@ const playGame = (game) => {
   console.log('Welcome to the Brain Games!');
   const username = readlineSync.question('May I have your name? ') || 'anonymous';
   console.log(`Hello, ${username}!`);
-  const gameRules = game.description;
-  console.log(gameRules);
+  const gameDescription = game.description;
+  console.log(gameDescription);
   const numberOfQuestions = 3;
   for (let questionsAsked = 1; questionsAsked <= numberOfQuestions; questionsAsked += 1) {
-    const { questionText, expected } = game.generateQuestion();
+    const { question: questionText, answer: expected } = game.generateGameRound();
     console.log(questionText);
     const actual = readlineSync.question('Your answer: ');
     const correct = actual.toLowerCase() === String(expected);

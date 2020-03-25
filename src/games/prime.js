@@ -10,12 +10,12 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateQuestion = () => {
+const generateGameRound = () => {
   const maxNum = 99;
   const randomNum = randomInt(Math.floor((maxNum - 1) / 2)) * 2 + 1;
-  const expected = (isPrime(randomNum)) ? 'yes' : 'no';
-  const questionText = `${randomNum}`;
-  return { questionText, expected };
+  const answer = (isPrime(randomNum)) ? 'yes' : 'no';
+  const question = `${randomNum}`;
+  return { question, answer };
 };
 
-export { description, generateQuestion };
+export { description, generateGameRound };

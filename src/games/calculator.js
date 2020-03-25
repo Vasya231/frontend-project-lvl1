@@ -17,14 +17,14 @@ const apply = (num1, num2, operation) => {
   }
 };
 
-const generateQuestion = () => {
+const generateGameRound = () => {
   const maxNum = 100;
   const randomNum1 = randomInt(maxNum);
   const randomNum2 = randomInt(maxNum);
   const operation = getRandomOperation();
-  const expected = apply(randomNum1, randomNum2, operation);
-  const questionText = `${randomNum1} ${operation} ${randomNum2}`;
-  return { questionText, expected };
+  const answer = apply(randomNum1, randomNum2, operation);
+  const question = `${randomNum1} ${operation} ${randomNum2}`;
+  return { question, answer };
 };
 
-export { description, generateQuestion };
+export { description, generateGameRound };

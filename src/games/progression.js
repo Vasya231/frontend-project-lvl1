@@ -2,7 +2,7 @@ import randomInt from '../randomInt.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateQuestion = () => {
+const generateGameRound = () => {
   const progression = [];
   const maxFirstNum = 100;
   const maxDiff = 30;
@@ -13,10 +13,10 @@ const generateQuestion = () => {
   for (let i = 0; i < progressionLength; i += 1) {
     progression.push(firstNum + (diff * i));
   }
-  const expected = progression[missing];
+  const answer = progression[missing];
   progression[missing] = '..';
-  const questionText = progression.join(' ');
-  return { questionText, expected };
+  const question = progression.join(' ');
+  return { question, answer };
 };
 
-export { description, generateQuestion };
+export { description, generateGameRound };
