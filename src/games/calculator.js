@@ -1,4 +1,4 @@
-import randomInt from '../randomInt.js';
+import randomInt from '../utils.js';
 
 const description = 'What is the result of the expression?';
 

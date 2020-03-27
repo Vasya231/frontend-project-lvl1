@@ -1,4 +1,4 @@
-import randomInt from '../randomInt.js';
+import randomInt from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 

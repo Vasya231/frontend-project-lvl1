@@ -1,4 +1,4 @@
-import randomInt from '../randomInt.js';
+import randomInt from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 

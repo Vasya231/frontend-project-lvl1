@@ -1,4 +1,4 @@
-import randomInt from '../randomInt.js';
+import randomInt from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
