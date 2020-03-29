@@ -8,7 +8,7 @@ const getRandomOperation = () => {
   return operations[operationIndex];
 };
 
-const apply = (num1, num2, operation) => {
+const apply = (operation, num1, num2) => {
   switch (operation) {
     case '+': return num1 + num2;
     case '-': return num1 - num2;
@@ -22,7 +22,7 @@ const generateGameRound = () => {
   const randomNum1 = randomInt(maxNum);
   const randomNum2 = randomInt(maxNum);
   const operation = getRandomOperation();
-  const answer = apply(randomNum1, randomNum2, operation);
+  const answer = apply(operation, randomNum1, randomNum2);
   const question = `${randomNum1} ${operation} ${randomNum2}`;
   return { question, answer };
 };
