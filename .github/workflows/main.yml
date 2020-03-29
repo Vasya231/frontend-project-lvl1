@@ -18,10 +18,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Install eslint dependecies
-      run: |
-        npm install eslint-config-airbnb-base
-        npm install eslint-plugin-import
+    - name: Install dependecies
+      run: npm install
 
     # Runs a single command using the runners shell
     - name: Checking code with linter
